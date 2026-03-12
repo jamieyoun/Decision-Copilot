@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Node / Next
+node_modules/
+.next/
+out/
+# Env
+.env*
+.env.local
+
+# Generated vector index
+index/vectors.json
+
+# OS
+.DS_Store
