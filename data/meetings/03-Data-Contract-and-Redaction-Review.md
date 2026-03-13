@@ -52,6 +52,13 @@ Privacy suggested adding a manual review checklist for public releases.
 - Notes may include additional sections, but required sections must be present and unique per meeting.
 - Any future dataset expansion must pass the same validation.
 
+## Open Decisions
+- [OPEN] TBD: Should the validator run in CI on every PR or only before releases?
+- [OPEN] Open question: Do we allow "Open Questions" as an optional section in the contract or standardize on "Open Decisions" only?
+- [OPEN] Needs decision: Who owns the forbidden-content checklist — PM or Security?
+- [OPEN] To be decided: Manual review checklist — required for every release or only for first public release?
+- [OPEN] TBD: How often do we re-run validation when the notes repo gets external contributions?
+
 ## Action Items
 - [REDACTED_ENG]: Add a `validate_notes.py` script that checks structure + forbidden patterns (Due: 2026-03-10)
 - [REDACTED_PM]: Write a short “Data Sources & Safety” README section for GitHub (Due: 2026-03-10)

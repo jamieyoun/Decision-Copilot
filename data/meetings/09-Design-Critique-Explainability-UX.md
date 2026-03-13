@@ -46,6 +46,13 @@ We drafted 4 reason categories:
 - The drawer will always include: what triggered, what to do next, and how to override.
 - Personalization explanations are only shown if user opted in.
 
+## Open Decisions
+- [OPEN] TBD: Should we A/B test "High/Medium/Low" confidence labels vs no label at all?
+- [OPEN] Open question: Do we show "Preference learned" only after N accepts, or from the first?
+- [OPEN] Needs decision: Who writes the default copy for each of the 4 reason categories — Design or PM?
+- [OPEN] To be decided: Allow product to add a 5th category later or lock to 4 for consistency?
+- [OPEN] TBD: Comprehension test — internal only or include 2–3 external reviewers?
+
 ## Action Items
 - [REDACTED_DESIGN]: Update prototype to new drawer structure + reason taxonomy (Due: 2026-03-14)
 - [REDACTED_RESEARCH]: Run a quick comprehension test with 3 fictional scenarios (Due: 2026-03-15)

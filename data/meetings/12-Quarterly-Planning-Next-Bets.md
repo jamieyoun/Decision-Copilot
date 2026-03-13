@@ -39,6 +39,14 @@ We deprioritized “more workflows” until the core loop is stable.
 - We will not add new workflows until we can show stable usefulness in one.
 - We will treat evaluation harness as a first-class deliverable (not optional).
 
+## Open Decisions
+- [OPEN] TBD: Which embedding model to use for retrieval — vendor API vs self-hosted vs hybrid?
+- [OPEN] Open question: Should governance UI be read-only at first or allow editing constraint entries in v1?
+- [OPEN] Needs decision: Who owns the "demo script" — PM, Design, or a dedicated enablement role?
+- [OPEN] To be decided: Whether we run the eval harness in CI or only on-demand before releases.
+- [OPEN] Priority order of the three bets — embeddings first, or governance UI first to unblock Risk?
+- [OPEN] TBD: Resourcing for onboarding — one dedicated eng or shared across the three bets?
+
 ## Action Items
 - [REDACTED_PM]: Draft quarterly goals and success criteria (Due: 2026-03-18)
 - [REDACTED_ML_LEAD]: Propose embedding model options and offline indexing plan (Due: 2026-03-20)

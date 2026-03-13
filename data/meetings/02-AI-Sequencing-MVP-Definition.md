@@ -66,6 +66,16 @@ We chose non-sensitive “quality” proxies:
 - We will instrument suppression events to understand coverage gaps.
 - We will define a weekly review ritual to look at telemetry and decide one improvement.
 
+## Open Decisions
+- [OPEN] Should we allow **per-user fine-tuning of recommendation frequency** in v1, or keep it fixed and rely on global tuning?
+- [OPEN] Where should the **“Why this recommendation?” explainer** live (inline on the card vs a separate drawer) so it stays understandable but not noisy?
+- [OPEN] Do we treat **“snooze” data as an explicit signal for future timing models**, or keep it purely descriptive until we have more volume?
+- [OPEN] TBD: Max recommendations per user per day to avoid advice fatigue — 5, 10, or configurable?
+- [OPEN] Open question: Should "dismiss" require a reason (dropdown) for analytics, or stay optional?
+- [OPEN] Needs decision: Do we ship "Next step" and "Timing reminder" as two separate recommendation types in MVP or merge into one?
+- [OPEN] To be decided: Snooze duration options — fixed (e.g. 1h, 1d) or free-form?
+- [OPEN] TBD: Whether suppression events should be visible in any user-facing debug or admin-only.
+
 ## Action Items
 - [REDACTED_PM]: Write MVP scope + non-goals + acceptance criteria (Due: 2026-03-08)
 - [REDACTED_DESIGN]: Ship UI spec for recommendation card + interactions + empty states (Due: 2026-03-09)

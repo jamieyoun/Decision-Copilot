@@ -43,6 +43,13 @@ Design suggested adding:
 - We will standardize prerequisites in README (Node version + commands).
 - We will keep troubleshooting minimal and focus on fast success paths.
 
+## Open Decisions
+- [OPEN] TBD: Should the onboarding panel be dismissible forever or show once per session?
+- [OPEN] Open question: Do we add a short video walkthrough or rely on text + screenshots only?
+- [OPEN] Needs decision: Which 5 queries go in DEMO_SCRIPT — PM to propose or team vote?
+- [OPEN] To be decided: Include Windows-specific commands in README or assume WSL/macOS only?
+- [OPEN] TBD: "What am I looking at?" panel — collapse by default or expanded on first load?
+
 ## Action Items
 - [REDACTED_PM]: Draft `DEMO_SCRIPT.md` and update README quickstart (Due: 2026-03-12)
 - [REDACTED_DESIGN]: Add lightweight onboarding panel in UI (Due: 2026-03-13)

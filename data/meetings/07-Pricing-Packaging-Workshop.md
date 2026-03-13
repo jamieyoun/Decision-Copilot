@@ -45,6 +45,14 @@ We discussed how pricing can create harm:
 - Governance features (audit/export/registry) are positioned for Enterprise tier.
 - A free demo mode includes a small synthetic dataset for evaluation.
 
+## Open Decisions
+- [OPEN] TBD: Exact boundary between Starter and Pro — is "eval harness" Pro-only or shared?
+- [OPEN] Open question: Should we offer a "governance-only" SKU for teams that want registry/audit without sequencing?
+- [OPEN] Needs decision: Free demo mode time limit — 14 days, 30 days, or unlimited with synthetic data only?
+- [OPEN] To be decided: Whether "active seats" means unique logins per month or concurrent sessions.
+- [OPEN] Naming for tiers — keep Starter/Pro/Enterprise or align to buyer language (Team/Scale/Govern)?
+- [OPEN] TBD: Trial length for Pro before requiring payment — 14 days or 30 days?
+
 ## Action Items
 - [REDACTED_PM]: Write a one-page packaging narrative for interviews (Due: 2026-03-13)
 - [REDACTED_GTM]: Draft hypothetical messaging for each tier (Due: 2026-03-14)

@@ -41,6 +41,13 @@ Threat model the demo architecture and identify must-have mitigations for a publ
 - API responses will avoid echoing full content unless explicitly requested.
 - We will add a short “Security notes” section to README.
 
+## Open Decisions
+- [OPEN] TBD: Should we add rate limiting to the API in v0 or defer to v1?
+- [OPEN] Open question: Do we need a security.txt or similar for responsible disclosure?
+- [OPEN] Needs decision: Log request paths (for debugging) or avoid logging to reduce leakage risk?
+- [OPEN] To be decided: Sanitize note IDs to alphanumeric + hyphen only or allow more characters?
+- [OPEN] TBD: README security section — brief bullet list or full threat-model summary?
+
 ## Action Items
 - [REDACTED_ENG]: Harden note fetch route against path traversal (Due: 2026-03-13)
 - [REDACTED_SECURITY]: Provide a minimal security checklist for open-source demos (Due: 2026-03-13)

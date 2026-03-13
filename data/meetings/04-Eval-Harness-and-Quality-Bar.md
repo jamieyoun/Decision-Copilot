@@ -51,6 +51,13 @@ Engineering proposed running the gold set on every change and flagging:
 - We will create a small gold set (10 prompts) and run it as a script.
 - We will treat citation accuracy as the primary metric for v0.
 
+## Open Decisions
+- [OPEN] TBD: Should the gold set be 10 prompts or expand to 20 once the harness is stable?
+- [OPEN] Open question: Do we score "insufficient evidence" responses as correct when appropriate, or only cited answers?
+- [OPEN] Needs decision: Who maintains the gold set — PM or ML?
+- [OPEN] To be decided: Run eval on every commit or only on main branch before deploy?
+- [OPEN] TBD: How do we handle flaky evals (e.g. non-deterministic retrieval)?
+
 ## Action Items
 - [REDACTED_PM]: Draft the 10 gold prompts + expected answers at high level (Due: 2026-03-11)
 - [REDACTED_ENG]: Implement `run_eval.ts` or `run_eval.py` to execute prompts and compare outputs (Due: 2026-03-13)

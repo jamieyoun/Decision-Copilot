@@ -49,6 +49,14 @@ We agreed:
 - Extraction returns structured items with `sourceId` for traceability.
 - v1 remains for backward compatibility but will be marked deprecated in README.
 
+## Open Decisions
+- [OPEN] TBD: Pagination default page size — 10, 20, or 50?
+- [OPEN] Open question: Should extraction support streaming (SSE) for large note sets or only batch?
+- [OPEN] Needs decision: Rate limits per API key — same for all tiers or tiered?
+- [OPEN] To be decided: Do we return partial extraction results when one note fails or fail the whole request?
+- [OPEN] Whether to add a dedicated "search within decisions/actions/risks" filter in the search endpoint.
+- [OPEN] TBD: Deprecation timeline for v1 — 3 months or 6 months after v2 GA?
+
 ## Action Items
 - [REDACTED_ENG_LEAD]: Implement parsing of header fields (meetingTitle/date/type) in a shared utility (Due: 2026-03-11)
 - [REDACTED_FRONTEND]: Update UI to display Type/Date chips and basic filters (Due: 2026-03-13)

@@ -38,6 +38,13 @@ Capture feedback from an internal demo and decide what to improve for a public G
 - Public release must include a disclaimer and data-safety section.
 - We will add a “Try these queries” list to the homepage.
 
+## Open Decisions
+- [OPEN] TBD: How many example queries on the homepage — 3, 5, or 7?
+- [OPEN] Open question: Should the demo script include expected outputs verbatim or high-level only?
+- [OPEN] Needs decision: Filters — Type and Date only, or add Meeting title search?
+- [OPEN] To be decided: Public release date — tie to a blog post or ship when ready?
+- [OPEN] TBD: Who reviews the data-safety section before release — PM or Legal?
+
 ## Action Items
 - [REDACTED_ENG]: Implement Type/Date filters using header parsing (Due: 2026-03-16)
 - [REDACTED_PM]: Write `DEMO_SCRIPT.md` with 5 queries and expected outputs (Due: 2026-03-15)

@@ -76,6 +76,16 @@ We aligned on early success indicators that do not depend on sensitive KPIs:
 - A minimal Constraint Registry is required in v0 with versioning and expirations.
 - We will cap the experience at **one** alternative attempt; if it fails, we stop and show a clear outcome.
 
+## Open Decisions
+- [OPEN] Who is the long-term **DRI for the Constraint Registry** (PM vs Risk) and how do we hand off ownership after the pilot?
+- [OPEN] Should we allow **per-tenant overrides** for certain constraint types in v1, or keep everything global until we see usage patterns?
+- [OPEN] Do we commit to a **user-visible “Why am I seeing this?” drawer for all constrained flows** in v0, or treat it as an experiment?
+- [OPEN] TBD: Whether expiration dates on constraints should be hard (auto-disable) or soft (review reminder).
+- [OPEN] Open question: Do we need a separate "constraint declined" user-facing message, or is a generic outcome enough for v0?
+- [OPEN] Needs decision: Who approves new constraint types before they can be added to the registry — Risk only or PM + Risk?
+- [OPEN] To be decided: Should the one alternative attempt be resettable per session or per 24h to avoid gaming?
+- [OPEN] TBD: Audit log retention for constraint invocations — 90 days or configurable per tenant?
+
 ## Action Items
 - [REDACTED_PM]: Write a v0 spec covering scope + non-goals + UX copy rules (Due: 2026-03-08)
 - [REDACTED_DESIGN]: Produce a clickable prototype of the alternative-step flow + rationale drawer (Due: 2026-03-09)

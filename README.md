@@ -4,6 +4,12 @@ Turn raw meeting notes into a reviewable list of **open decisions**, **risks**, 
 
 This is a **Next.js App Router** project with a local, rules-first AI workflow (no external model calls by default).
 
+### Demo
+
+A short walkthrough of Decision Copilot with voiceover:
+
+**[▶ Watch demo on Loom](https://www.loom.com/share/7e2a0cd094284dc9b867cd99b08e19a6)**
+
 ---
 
 ## Features

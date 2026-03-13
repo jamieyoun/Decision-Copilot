@@ -39,6 +39,13 @@ Users dismissed a recommendation, but the same recommendation reappeared on the 
 - Ranking inputs must include user response history (accept/edit/snooze/dismiss).
 - We will add an automated test for the loop scenario.
 
+## Open Decisions
+- [OPEN] TBD: Cooldown window length — 1 hour, 24 hours, or configurable per tenant?
+- [OPEN] Open question: Should we show a "You dismissed this" note if the same suggestion would have appeared?
+- [OPEN] Needs decision: Include snooze in response history for ranking or only accept/dismiss/edit?
+- [OPEN] To be decided: Dashboard alert threshold — 3 repeated dismissals or 5?
+- [OPEN] TBD: User-facing explanation — in-app tooltip only or also in docs?
+
 ## Action Items
 - [REDACTED_ENG_LEAD]: Implement cooldown logic and update cache keys (Due: 2026-03-16)
 - [REDACTED_PM]: Update product spec to treat dismissal as strong negative feedback (Due: 2026-03-16)
