@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Decision Copilot
 
-## Getting Started
+Turn raw meeting notes into a reviewable list of **open decisions**, **risks**, and **action items** – with traceable evidence from your markdown notes.
 
-First, run the development server:
+This is a **Next.js App Router** project with a local, rules-first AI workflow (no external model calls by default).
+
+---
+
+## Features
+
+- **Evidence‑first UI**
+  - 3‑pane layout: modes/filters · results list · evidence drawer
+  - Every item includes meeting title, date, section, and source chunk ID
+  - Right-hand drawer shows top retrieved evidence with previews and a “view raw chunk” toggle
+
+- **Task‑mode workflow**
+  - Modes: **Open Decisions**, **Risks**, **Action Items**
+  - Pin important items, mark items as reviewed/dismissed
+  - “Show reviewed” toggle to bring triaged items back when needed
+
+- **Local index & chunking**
+  - Markdown meetings in `data/meetings`
+  - `lib/loader.ts` loads header metadata and raw text
+  - `lib/chunker.ts` splits meetings into section-level chunks per `##` heading
+  - `/api/ingest` embeds and indexes chunks locally (see `lib/vectorstore.ts`)
+  - `/api/analyze` runs rules-first extraction on retrieved chunks
+
+- **Professional UI**
+  - Enterprise-style layout with a neutral palette and clear hierarchy
+  - Light/dark theme toggle in the header (persists per browser)
+  - Keyboard shortcuts: `1`/`2`/`3` switch mode, `Esc` closes the evidence drawer
+  - Skeleton loaders, empty states, and clear error banners
+
+---
+
+## Project structure (high level)
+
+- `app/page.tsx` – Decision Copilot main UI (3‑pane layout)
+- `app/api/ingest/route.ts` – builds the local vector index from `data/meetings`
+- `app/api/analyze/route.ts` – retrieves + analyzes chunks for decisions/risks/actions
+- `lib/loader.ts` – loads & validates meeting markdown files
+- `lib/chunker.ts` – creates section‑level `MeetingChunk`s
+- `lib/vectorstore.ts` – local vector index utilities
+- `lib/analyze.ts` – rules‑first extraction logic
+- `lib/copilot-types.ts` – shared UI types and helpers
+- `components/*` – layout and UI components (`StatusBar`, `Sidebar`, `ResultsList`, `EvidenceDrawer`, `ThemeProvider`, etc.)
+
+---
+
+## Prerequisites
+
+- Node.js 18+ (or the version recommended by your Node/Next.js toolchain)
+- `npm` (or `pnpm` / `yarn` if you prefer – commands below assume `npm`)
+
+---
+
+## Running locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Preparing meeting data
 
-## Learn More
+Place markdown files under `data/meetings`. Each file must start with:
 
-To learn more about Next.js, take a look at the following resources:
+```markdown
+# Meeting: <title>
+Date: YYYY-MM-DD
+Type: <type>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Section 1
+...
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `id` is derived from the filename (without extension).
+- Sections are defined by `##` headings; each section becomes a single chunk.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Typical workflow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Add markdown** meeting notes to `data/meetings`.
+2. In the UI, click **“Ingest meeting notes”** (or **Run Ingest** in the header) – this:
+   - Loads all meetings via `lib/loader.ts`
+   - Chunks them via `lib/chunker.ts`
+   - Embeds & indexes chunks locally (`/api/ingest` + `lib/vectorstore.ts`)
+3. Choose a mode: **Open Decisions**, **Risks**, or **Action Items**.
+4. Review results:
+   - Pin key items
+   - Mark items reviewed/dismissed (client-side only; persisted in `localStorage`)
+   - Inspect evidence in the right drawer for traceability
+5. Export:
+   - Export **pinned** or **current view** to Markdown
+   - Copy items or exports to clipboard for docs or tickets
+
+---
+
+## Keyboard & shortcuts
+
+- `1` – Open Decisions
+- `2` – Risks
+- `3` – Action Items
+- `Esc` – Close the evidence drawer
+
+These shortcuts are disabled when typing in inputs/textareas.
+
+---
+
+## Environment & deployment
+
+This is a standard Next.js 16 (App Router) project:
+
+- Dev: `npm run dev`
+- Production build: `npm run build`
+- Start production server: `npm start`
+
+You can deploy using any Next.js-compatible host (e.g. Vercel). No external AI services are required for the core workflow; embeddings and indexing run locally.
+
+---
+
+## Contributing
+
+Improvements to the extraction rules, UI, or data pipeline are welcome. Ideas that are especially valuable:
+
+- Better heuristics for classifying decisions/risks/action items
+- Additional filters (owner, status, severity) based on structured note formats
+- UX improvements that keep the **evidence‑first** and **calm, enterprise** aesthetic
+
